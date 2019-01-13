@@ -1,0 +1,177 @@
+<!--
+Student Name: Palash Tayade
+Student ID: 44498632
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Welcome to Jobs</title>
+		<link rel="icon" href="/images/logo2.png" type="image/jpg" sizes="32x32">
+		<link rel="stylesheet" href="/static/style.css">
+
+	</head>
+	<body id="body">
+
+		<nav class="nav">
+			<ul>
+				<li><a href="#">Register</a></li>
+                <li><a href="/about">About</a></li>
+			  </ul>
+            <ul id="formHead">
+				<form id="logoutform" action="/logout" method="post">
+				  <div class="loginDiv" id="login">
+                    <input type="submit" class="loginButton" value="Log out" id="loginBtn">
+				  </div>
+				</form>
+
+			</ul>
+			<ul><p class="helloUser">{{message}}</p></ul>
+
+		</nav>
+
+
+		<div class="firstContainer">
+			<div class="secondContainer">
+				<div class="optionsContainer">
+					<div><h2 style="align:center"><a class="a" href="#">Courses</a> | <a class="a" href="#">Post a job</a> | <a class="a" href="#">Business</a></h2></div>
+				</div>
+			</div>
+		</div>
+		<div class="searchFirstContainer">
+			<div class="searchSecondContainer">
+				<div class="searchThirdContainer" >
+					<div class="searchThirdContainerFirstCol"><img src="/images/logo.jpg" alt="Company Logo" height="140"></div>
+					<div class="searchThirdContainerSecondCol">
+						 <div class="searchTC-SC-whatLabel"><label class="label"><span class="textProperty">What</span></label></div>
+					<div><input type="text" class="searchTextbox" placeholder="Job Title"></div>
+					</div>
+					<div class="searchThirdContainerSecondCol">
+						<div class="searchTC-SC-whatLabel"><label class="label"><span class="textProperty">Where</span></label></div>
+					<div><input type="text" class="searchTextbox" placeholder="Location"></div>
+					</div>
+					<div class="searchTC-SearchButton" >
+						<button class="button">
+							<input type="image" src="/images/searchFinal.png" width="200" height="185">
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div  class="imgFirstContainer" >
+			<div class="imgSecondContainer" >
+                <form id="postform" action="/post" method="post" class="textProperty1">
+                    <h1>Post a Job</h1>
+				<br>
+				<table class="table">
+					<tr>
+						<td><label>Position:</label></td><td> <input type="text" class="loginText" name="title"></td>
+
+					</tr>
+					<tr>
+						<td><label>Location:</label></td><td> <input type="text" class="loginText" name="location"></td>
+					</tr>
+					<tr>
+						<td><label>Company:</label></td><td> <input type="text" class="loginText" name="company"></td>
+					</tr>
+					<tr>
+						<td><label>Description:</label></td><td> <input type="text" class="loginText" name="description"></td>
+					</tr>
+					<tr>
+						<td></td></td><td><input type="submit" value="Post Job" class="loginButton"></td>
+					</tr>
+				</table>
+                </form>
+
+
+			</div>
+		</div>
+
+		<div  class="tableFirstContainer" >
+			<div class="tableSecondContainer">
+			<table  class="textProperty" width="100%">
+							<tr style="color: yellow">
+								<td >Job ID</td>
+								<td>Date posted</td>
+								<td>Contact</td>
+								<td>Position</td>
+								<td>Location</td>
+								<td>Company</td>
+								<td>Job Description</td>
+							</tr>
+							%for row in rows:
+							<tr>
+								%for col in row:
+								<td>{{!col}}</td>
+								%end
+							</tr>
+							%end
+						</table>
+				</div>
+		</div>
+
+
+
+		<div  class="imgFirstContainer" >
+			<div class="imgSecondContainer">
+				<div class="textProperty1" class="imgThirdContainer">
+					<div  id="imageFirstColumn"><img class="img" src="/images/searchRecords.png" alt="Company Logo" height="175">
+					<h3 class="text-center">Search millions of jobs</h3>
+						<p class="text-center">We've got more than 5 million of 'em—so you've got plenty of options. Plus, we'll send an alert when a good fit for you is posted.</p>
+					</div>
+					<div id="imageSecondColumn"><img class="img" src="/images/calibrate.jpg" alt="Company Logo" height="175">
+						<h3 class="text-center">Calibrate yourself</h3>
+							<p class="text-center">We've got your back. Our career advice, resume services and education partners give you a leg up in the job search.</p>
+					</div>
+					<div id="imageThirdColumn"><img class="img" src="/images/handshake.png" alt="Company Logo" height="175">
+					<h3 class="text-center">Get the best deal</h3>
+							<p class="text-center">Our advance search engine ensures that both the employee and employer get what they are looking for.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div  class="footerMainContainer">
+			<div class="footerFirstContainer">
+				<div class="textProperty" id="footerFirstColumn"><h3>About CareerBest</h3>
+				<h4>Vision</h4>
+					<p style="textProperty">To be the world's leading jobs employment service platform.</p>
+					<h4>Mission</h4>
+					<p style="textProperty">Empowering people to build their career by bridging requirements to opportunities.</p>
+				</div>
+				<div class="textProperty" id="footerSecondColumn"><h3>For Job Seeker</h3>
+					<ul class="ul">
+						<li><span><a href="#" >Find Jobs</a></span></li>
+						<li><a href="#">Upload Resume</a> </li>
+						<li><a href="#">Salary</a> </li>
+						<li><a href="#">Help</a></li>
+					</ul>
+				</div>
+				<div class="textProperty" id="footerThirdColumn"><h3>For Employers</h3>
+				<ul class="ul">
+						<li><a href="#">Post Job</a> </li>
+						<li><a href="#">Search Resume</a> </li>
+						<li><a href="#">Site Map</a> </li>
+						<li><a href="#">Terms of Use</a></li>
+					</ul>
+				</div>
+				<div class="textProperty" id="footerFourthColumn"><h3>Helpful Resources</h3>
+					<ul class="ul">
+						<li><a href="#">Contact Us</a> </li>
+						<li><a href="#">Terms of Use</a> </li>
+						<li><a href="#">Privacy Center</a> </li>
+						<li><a href="#">AdChoices</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footerSecondContainer">
+
+			<div class="line"></div><br><br><br>
+				<p align="center"> Copyright © 2018 - CareerBest Worldwide </p>
+			</div>
+		</div>
+	</body>
+</html>
+
